@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/javierramosscv/taking-food-app.git/static/css/main.21455483.chunk.css",
+    "main.js": "/javierramosscv/taking-food-app.git/static/js/main.e885879b.chunk.js",
+    "main.js.map": "/javierramosscv/taking-food-app.git/static/js/main.e885879b.chunk.js.map",
+    "runtime-main.js": "/javierramosscv/taking-food-app.git/static/js/runtime-main.efcfebf8.js",
+    "runtime-main.js.map": "/javierramosscv/taking-food-app.git/static/js/runtime-main.efcfebf8.js.map",
+    "static/css/2.0f8aad42.chunk.css": "/javierramosscv/taking-food-app.git/static/css/2.0f8aad42.chunk.css",
+    "static/js/2.51714b95.chunk.js": "/javierramosscv/taking-food-app.git/static/js/2.51714b95.chunk.js",
+    "static/js/2.51714b95.chunk.js.map": "/javierramosscv/taking-food-app.git/static/js/2.51714b95.chunk.js.map",
+    "static/js/3.25f8ef51.chunk.js": "/javierramosscv/taking-food-app.git/static/js/3.25f8ef51.chunk.js",
+    "static/js/3.25f8ef51.chunk.js.map": "/javierramosscv/taking-food-app.git/static/js/3.25f8ef51.chunk.js.map",
+    "index.html": "/javierramosscv/taking-food-app.git/index.html",
+    "static/css/2.0f8aad42.chunk.css.map": "/javierramosscv/taking-food-app.git/static/css/2.0f8aad42.chunk.css.map",
+    "static/css/main.21455483.chunk.css.map": "/javierramosscv/taking-food-app.git/static/css/main.21455483.chunk.css.map",
+    "static/js/2.51714b95.chunk.js.LICENSE.txt": "/javierramosscv/taking-food-app.git/static/js/2.51714b95.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.efcfebf8.js",
+    "static/css/2.0f8aad42.chunk.css",
+    "static/js/2.51714b95.chunk.js",
+    "static/css/main.21455483.chunk.css",
+    "static/js/main.e885879b.chunk.js"
+  ]
+}
