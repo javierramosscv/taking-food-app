@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/taking-food-app/static/css/main.671b3cfb.chunk.css",
-    "main.js": "/taking-food-app/static/js/main.64fd9a28.chunk.js",
-    "main.js.map": "/taking-food-app/static/js/main.64fd9a28.chunk.js.map",
+    "main.js": "/taking-food-app/static/js/main.d5f5f0e0.chunk.js",
+    "main.js.map": "/taking-food-app/static/js/main.d5f5f0e0.chunk.js.map",
     "runtime-main.js": "/taking-food-app/static/js/runtime-main.b6bfc963.js",
     "runtime-main.js.map": "/taking-food-app/static/js/runtime-main.b6bfc963.js.map",
     "static/css/2.0f8aad42.chunk.css": "/taking-food-app/static/css/2.0f8aad42.chunk.css",
-    "static/js/2.25c7715b.chunk.js": "/taking-food-app/static/js/2.25c7715b.chunk.js",
-    "static/js/2.25c7715b.chunk.js.map": "/taking-food-app/static/js/2.25c7715b.chunk.js.map",
+    "static/js/2.8a7d85aa.chunk.js": "/taking-food-app/static/js/2.8a7d85aa.chunk.js",
+    "static/js/2.8a7d85aa.chunk.js.map": "/taking-food-app/static/js/2.8a7d85aa.chunk.js.map",
     "static/js/3.6ab20c75.chunk.js": "/taking-food-app/static/js/3.6ab20c75.chunk.js",
     "static/js/3.6ab20c75.chunk.js.map": "/taking-food-app/static/js/3.6ab20c75.chunk.js.map",
     "index.html": "/taking-food-app/index.html",
     "static/css/2.0f8aad42.chunk.css.map": "/taking-food-app/static/css/2.0f8aad42.chunk.css.map",
     "static/css/main.671b3cfb.chunk.css.map": "/taking-food-app/static/css/main.671b3cfb.chunk.css.map",
-    "static/js/2.25c7715b.chunk.js.LICENSE.txt": "/taking-food-app/static/js/2.25c7715b.chunk.js.LICENSE.txt"
+    "static/js/2.8a7d85aa.chunk.js.LICENSE.txt": "/taking-food-app/static/js/2.8a7d85aa.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b6bfc963.js",
     "static/css/2.0f8aad42.chunk.css",
-    "static/js/2.25c7715b.chunk.js",
+    "static/js/2.8a7d85aa.chunk.js",
     "static/css/main.671b3cfb.chunk.css",
-    "static/js/main.64fd9a28.chunk.js"
+    "static/js/main.d5f5f0e0.chunk.js"
   ]
 }
