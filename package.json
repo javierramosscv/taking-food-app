@@ -2,7 +2,7 @@
   "name": "taking-food-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://javierramosscv.github.io/",
+  "homepage": "https://javierramosscv.github.io/taking-food-app",
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.1",
     "@testing-library/jest-dom": "^5.14.1",
