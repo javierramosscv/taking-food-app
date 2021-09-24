@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/taking-food-app/static/css/main.375ce1c8.chunk.css",
-    "main.js": "/taking-food-app/static/js/main.432c6529.chunk.js",
-    "main.js.map": "/taking-food-app/static/js/main.432c6529.chunk.js.map",
+    "main.js": "/taking-food-app/static/js/main.a86feff8.chunk.js",
+    "main.js.map": "/taking-food-app/static/js/main.a86feff8.chunk.js.map",
     "runtime-main.js": "/taking-food-app/static/js/runtime-main.540c3625.js",
     "runtime-main.js.map": "/taking-food-app/static/js/runtime-main.540c3625.js.map",
     "static/css/2.0f8aad42.chunk.css": "/taking-food-app/static/css/2.0f8aad42.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.0f8aad42.chunk.css",
     "static/js/2.edffe051.chunk.js",
     "static/css/main.375ce1c8.chunk.css",
-    "static/js/main.432c6529.chunk.js"
+    "static/js/main.a86feff8.chunk.js"
   ]
 }
