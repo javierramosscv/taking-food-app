@@ -5,15 +5,25 @@ function SearchForm(props) {
   const [searchText, setSearchText] = useState("");
   const [selectOption, setselectOption] = useState("meal");
 
+
   const history = useHistory();
 
   function handleSubmit(ev) {
     console.log("HandlerSubmit: here");
     ev.preventDefault();
-    props.setLoading(true);
-    selectOption === "meal"
-      ? history.push(`/searchMealbyText/st/${searchText}`)
-      : history.push(`/searchDrinkCategory/st?query=${searchText}`);
+    
+
+     if( searchText === ""){
+       props.setErrorMessage("Please, Introduce a search");
+    
+     } else {
+      props.setLoading(true);
+      selectOption === "meal"
+         ? history.push(`/searchMealbyText/st/${searchText}`)
+         : history.push(`/searchDrinkCategory/st?query=${searchText}`);
+         props.setErrorMessage("");
+
+     }
 
     // history.push(`/searchMealbyText/st/${searchText}`);
   }
@@ -49,7 +59,8 @@ function SearchForm(props) {
           Search
         </button>
       </form>
-      <div></div>
+      <br/>
+      <div className="ErrorMessage"> {props.errorMessage}</div>
     
       </div>
   );

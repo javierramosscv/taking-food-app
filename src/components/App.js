@@ -36,6 +36,7 @@ function App() {
   const [categoryMealList, setCategoryMealList] = useState({});
   const [categoryDrinkList, setCategoryDrinkList] = useState({});
   const [loading, setLoading] = useState(true);
+  const [errorMessage,setErrorMessage]= useState("");
   
   const [favorites, setFavorites] = useState([
     {
@@ -205,7 +206,7 @@ console.log('Existe fave',drinkIndex)
                   </Link>
                 </li>
               </ul>
-              <SearchForm setLoading={setLoading} />
+              <SearchForm setLoading={setLoading} errorMessage={errorMessage} setErrorMessage={setErrorMessage}  />
             </div>
           </div>
         </nav>
