@@ -1,11 +1,13 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import './DetailsMeals.css';
+import "./DetailsMeals.css";
+import Spinner from "./Spinner";
+import { URL_BASE_MEAL, URL_METHODBYID_MEAL } from "../helper.js";
 
-const URL_BASE = "https://www.themealdb.com/api/json/v1/1/";
-const URL_METHOD = "lookup.php?i=";
+//const URL_BASE = "https://www.themealdb.com/api/json/v1/1/";
+//const URL_METHODBYID_MEAL = "lookup.php?i=";
 
-const DetailsMeal = () => {
+const DetailsMeal = (props) => {
   const [details, setDetails] = useState({});
   const [ingredients, setIngredients] = useState([]);
 
@@ -13,13 +15,14 @@ const DetailsMeal = () => {
   const params = useParams();
 
   const style = {
-    "max-width": "10rem",
-    "min-width": "12rem",
+    maxWidth: "10rem",
+    minWidth: "12rem",
+    height: "12rem",
   };
 
   useEffect(() => {
     setDetails({});
-    fetch(URL_BASE + URL_METHOD + params.id)
+    fetch(URL_BASE_MEAL + URL_METHODBYID_MEAL + params.id)
       .then((res) => res.json())
       .then((data) => {
         setDetails(data);
@@ -65,77 +68,138 @@ const DetailsMeal = () => {
   };
 
   const buildInstructions = (item) => {
-      // let pattern = item.includes('\r\n\r\n')? "\r\n\r\n": "\r\n";
-       return (
+    return (
       <ul>
-        {item.split('\r\n').map((items) => (
-          
-          items!=="" && items.length>3? <li>{items}</li>:''
-         
-       
-          ))}
+        {item
+          .split("\r\n")
+          .map((items, index) =>
+            items !== "" && items.length > 3 ? <li key={index}>{items}</li> : ""
+          )}
       </ul>
     );
-
-    return (
-      <pre>
-               {item}
-             </pre>
-    );
-
-
   };
 
-  const buildCardIngredients = (ingredient) => (
-    <div className="col-sm-3">
+  const buildCardIngredients = (ingredient, index) => (
+    <div key={index} className="col-sm-2">
       <div className="card  mb-1" style={style}>
-        <div className="card-body">
-          <h4 className="card-title">{ingredient.name}</h4>
-          <img
-            src={ingredient.path}
-            className="card-img-top-thumbnail"
-            alt="..."
-          />
+        <div className="card-body text-center">
+          <img src={ingredient.path} className="img-fluid" alt="..." />
+          <h6 className="card-title">
+            <small>
+              {ingredient.measure}&nbsp;-&nbsp;{ingredient.name}
+            </small>
+          </h6>
         </div>
       </div>
     </div>
   );
 
+  const buildVideoPath = (videoPath) => {
+    console.log(videoPath);
+    const array = videoPath.split("https://www.youtube.com/watch?v=");
+    return array[1];
+  };
+
   return (
     <div>
-      <h3>Details details for {params.id}</h3>
+      <h3 className="text-center mt-3">Meal's Details</h3>
+
       {details.meals ? (
         <div>
-          <br />
-          <hr />
-          <div>
-                 <div className="flex-container" >
-                       <div className="flex-item1">
-                <img
-                  src={details.meals[0].strMealThumb}
-                  alt={details.meals[0].title}
-                />
-              </div>
-              <div className="flex-item2">
-              <div className="row">
-                {ingredients.map((ingredient) =>
-                  buildCardIngredients(ingredient)
-                )}
+          <div className="ms-5">
+            <br />
+            <hr />
+            <div>
+              <div className="flex-container">
+                <div className="flex-item1">
+                  <div>
+                    <h4>Meal: &nbsp;{details.meals[0].strMeal}</h4>
+                  </div>
+                  <br />
+                  <img
+                    style={{ width: "500px" }}
+                    src={details.meals[0].strMealThumb}
+                    alt={details.meals[0].title}
+                  />
+                </div>
+                <div className="flex-item2">
+                  <div className="ms-4">
+                    <h4>Ingredients</h4>
+                  </div>
+                  <br />
+                  <div className="row ms-1">
+                    {ingredients.map((ingredient, index) =>
+                      buildCardIngredients(ingredient, index)
+                    )}
+                  </div>
                 </div>
               </div>
+              <div></div>
             </div>
-            <div></div>
+
+            <br />
+            <br />
           </div>
-          <h4>Title: {details.meals[0].strMeal}</h4>
-          <div>
-            Instructions: {buildInstructions(details.meals[0].strInstructions)}
+          <div className="ms-5 me-5">
+            <h4>Meal: {details.meals[0].strMeal}</h4>
+            <div className="form-check form-switch">
+              <input
+                className="form-check-input "
+                type="checkbox"
+                id="flexSwitchCheckDefault"
+                onChange={() =>
+                  props.handleToggleFave(details.meals[0], props.favorites)
+                }
+                checked={
+                  props.isFavorite(details.meals[0].idMeal, props.favorites)
+                    ? "checked"
+                    : ""
+                }
+              />
+              <label className="form-check-label">
+                {props.isFavorite(details.meals[0].idMeal, props.favorites)
+                  ? "Added"
+                  : "Add"}{" "}
+                Favorites
+              </label>
+            </div>
+            <div>
+              <h4>Instructions:</h4>
+              {buildInstructions(details.meals[0].strInstructions)}
+            </div>
+            <p>Area Country: {details.meals[0].strArea}</p>
+
+            <p>
+              {details.meals[0].strTags
+                ? `Tags: ${details.meals[0].strTags}`
+                : ""}{" "}
+            </p>
           </div>
-          <p>Area Country: {details.meals[0].strArea}</p>
-        
-          <p>Tags: {details.meals[0].strTags}</p>
+          <br />
+          <br />
+          <div className="text-center">
+            <iframe
+              className=""
+              width="560"
+              height="315"
+              src={`https://www.youtube.com/embed/${buildVideoPath(
+                details.meals[0].strYoutube
+              )}`}
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <br />
+          <br />
         </div>
       ) : (
-        <p>Loading image...</p>
+        <div>
+          <Spinner />
+          <br />
+          <br />
+        </div>
       )}
     </div>
   );
