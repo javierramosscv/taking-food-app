@@ -19,8 +19,7 @@ const Faves = (props) => {
     <div>
       <div className="d-flex container">
         <div className="col ">
-          <div> Your Meals </div>
-          {console.log("fave", props.favorites)}
+          <div><h4 className="pt-4 pb-2">Your Meals</h4> </div>
           {props.favorites.map((meal, index) => (
             <div key={index} className="card mb-3 ms-1 " style={style}>
               <div className="row g-0">
@@ -71,9 +70,8 @@ const Faves = (props) => {
           ))}
         </div>
         <div className="col ">
-          <div> Your Drinks </div>
+          <div><h4 className="pt-4 pb-2">Your Drinks</h4>  </div>
 
-          {console.log("fave", props.favoritesDrink)}
           {props.favoritesDrink.map((drink, index) => (
             <div key={index} className="card mb-3 ms-1 " style={style}>
               <div className="row g-0">

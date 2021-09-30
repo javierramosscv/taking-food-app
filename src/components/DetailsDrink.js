@@ -24,19 +24,19 @@ const DetailsDrink = (props) => {
       .then((data) => {
         setDetails(data);
         setIngredients(buildIngredientsMeasure(data.drinks[0]));
-        console.log("drink details", data);
+      
       })
       .catch((err) => console.log("Error loading results", err));
   }, [params.id]);
 
   const buildIngredientsMeasure = (drink) => {
-    console.log("Paso por aqui", drink);
+   
     const ingredientList = [];
 
     Object.entries(drink).map(([element, value]) => {
       if (element.includes("strIngredient")) {
           const indexMesuare = element.split("strIngredient");
-        console.log("Measure", drink[`strMeasure${indexMesuare[1]}`]);
+      
         if (value !== null && value.trim() !== "") {
           ingredientList.push({
             name: value,

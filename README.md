@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# Takeing Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Website's Link
+https://javierramosscv.github.io/taking-food-app/
 
-## Available Scripts
+## Features 
+- This application is a single page application in React with hooks and Bootstrap as the UI library. 
+- Details:
+    - Connection to third party Api's
+    - Interaction between components using params
+    - Implementation of React state
+    - Implementation of React Router 
+- This application is using two third party free Api's from:
 
-In the project directory, you can run:
+### 1. https://www.thecocktaildb.com/api.php 
+	
+### EndPonits used:
+```
+Lookup full meal details by id
+    www.themealdb.com/api/json/v1/1/lookup.php?i=52772
 
-### `npm start`
+Search meal by name
+    www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+List all Categories
+    www.themealdb.com/api/json/v1/1/list.php?c=list
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Filter by Category
+    www.themealdb.com/api/json/v1/1/filter.php?c=Seafood
+```
+### 2. https://www.themealdb.com/api.php
 
-### `npm test`
+### EndPonits used:
+```		
+Lookup full cocktail details by id
+    www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+List the categories
+    www.thecocktaildb.com/api/json/v1/1/list.php?c=list
 
-### `npm run build`
+Search cocktail by name
+    www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Filter by Category
+    www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+			  
 
-### `npm run eject`
+### Libraries used
+     
+	npm install bootswatch (Theme Flatly )
+	
+	npm install react-router react-router-dom
+	
+	npm install gh-pages --save-dev (deployment in github)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+###  Reference links.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+	Bootstraps theme	
+	
+		https://bootswatch.com/flatly/
+    
+	Bootstraps 
+		https://getbootstrap.com/
+	
+		https://bootstrap-cheatsheet.themeselection.com/#col-sm-auto
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+	
+	
+###  Screenshots
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<img src="./img-1.png" width="900px"/>
+<img src="./img-2.png" width="900px"/>
+<img src="./img-3.png" width="900px"/>
+<img src="./img-4.png" width="900px"/>
+<img src="./img-5.png" width="900px"/>
+<img src="./img-6.png" width="900px"/>

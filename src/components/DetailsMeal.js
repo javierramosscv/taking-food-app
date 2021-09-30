@@ -27,13 +27,13 @@ const DetailsMeal = (props) => {
       .then((data) => {
         setDetails(data);
         setIngredients(buildIngredientsMeasure(data.meals[0]));
-        // console.log(data);
+      
       })
       .catch((err) => console.log("Error loading results", err));
   }, [params.id]);
 
   const buildIngredientsMeasure = (meal) => {
-    console.log("Paso por aqui", meal);
+   
     const ingredients = [];
     const mesasures = [];
 
@@ -41,7 +41,7 @@ const DetailsMeal = (props) => {
       if (element.includes("strIngredient")) {
         if (value !== null && value.trim() !== "") {
           ingredients.push({ ingredient: value });
-          //       console.log(`ingrediente  ${element} ${value}`)
+         
         }
       }
 
@@ -49,7 +49,7 @@ const DetailsMeal = (props) => {
         if (value !== null && value.trim() !== "") {
           mesasures.push({ measure: value });
 
-          //      console.log(`Measure  ${element} ${value}`)
+         
         }
       }
     });
@@ -61,7 +61,6 @@ const DetailsMeal = (props) => {
         measure: mesasures[index].measure,
         path: `https://www.themealdb.com/images/ingredients/${ingredient.ingredient}-Small.png`,
       };
-      //console.log(`Ingrediente +Measure  ${ingredient.ingredient} `,mesasures[index].measure)
     });
 
     return ingredientList;
@@ -95,7 +94,7 @@ const DetailsMeal = (props) => {
   );
 
   const buildVideoPath = (videoPath) => {
-    console.log(videoPath);
+   
     const array = videoPath.split("https://www.youtube.com/watch?v=");
     return array[1];
   };

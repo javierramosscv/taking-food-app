@@ -24,7 +24,7 @@ const SearchDrinkResult = (props) => {
     const categoryDrink=query.get("query");
     
 const buildParams=(str)=>{
-console.log(str.replaceAll(" ","_"))
+
  return (str.replace(" ","_"))
 
 }
@@ -33,9 +33,9 @@ console.log(str.replaceAll(" ","_"))
     useEffect(() => {
       const URL_METHOD =
         params.kq === "c" ? URL_METHODBYCATEGORY_DRINK : URL_METHODBYTEXT_DRINK;
-  console.log("parametr",query.get("query"))
+ 
       setResults({});
-      console.log(URL_BASE_DRINK + URL_METHOD + buildParams(query.get("query")))
+   
       fetch(URL_BASE_DRINK + URL_METHOD + buildParams(query.get("query")))
         .then((res) => res.json())
         .then((data) => {
@@ -43,7 +43,7 @@ console.log(str.replaceAll(" ","_"))
   
           props.setLoading(false);
   
-          console.log("fetch Drink Sear", data);
+         
         })
         .catch((err) => console.log("Error loading results", err));
     }, [query.get("query")]);
@@ -54,7 +54,7 @@ console.log(str.replaceAll(" ","_"))
         
         <div className="resultMain">
         <h3>
-          Search Results for:'{params.query} {params.kq}'
+          Search Results for:'{query.get("query")}'
         </h3>
         {props.loading ? (
           <div>
@@ -89,20 +89,24 @@ console.log(str.replaceAll(" ","_"))
                           
                         </small>
                       </span>
-                      <div className="form-check form-switch position-absolute top-0 end-0 mt-2">
-                        <input
-                          className="form-check-input "
-                          type="checkbox"
-                          id="flexSwitchCheckDefault"
-                          onChange={() =>
-                            props.handleToggleFave(drink, props.favorites)
-                          }
-                          checked={
-                            props.isFavorite(drink.idDrink, props.favorites)
-                              ? "checked"
-                              : ""
-                          }
-                        />
+                      <div className="position-absolute top-0 end-0 mt-2  me-2">
+                                               {props.isFavorite(drink.idDrink, props.favorites) ? (
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="currentColor"
+                            class="bi bi-bookmark-plus-fill"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"
+                            />
+                          </svg>
+                        ) : (
+                          ""
+                        )}
                       </div>
                     </div>
                   </div>

@@ -15,7 +15,6 @@ const Home = (props) => {
 
  
   const buildCard = (categoryList, init, end,path) => {
-    console.log("card",categoryList)
 
      return categoryList.map((item,index) => {
       if (item.id >= init && item.id <= end) {
@@ -36,7 +35,6 @@ const Home = (props) => {
   };
 
   const buildCard2 = (categoryList, init, end,path) => {
-    console.log("card",categoryList)
 
      return categoryList.map((item,index) => {
       if (item.id >= init && item.id <= end) {
@@ -58,8 +56,10 @@ const Home = (props) => {
 
   return (
     <div>
-      <h2>Home</h2>
-      {console.log('jarss',props.categoryMealList) }
+    <br/>
+    <br/>  
+    <h4 className="text-center" >Meal's Category</h4>
+    <br/>
       {Object.keys(props.categoryMealList).length !== 0 ? (
          <div>
            <div
@@ -149,7 +149,9 @@ const Home = (props) => {
       
         <p>Loading results...</p>
       )}
-
+      <br/>
+      <h4 className="text-center">Drink's Category</h4>
+      <br/>
      
       {Object.keys(props.categoryDrinkList).length !== 0 ? (
         <div>
@@ -244,9 +246,8 @@ const Home = (props) => {
       <br/>
       <br/>
       <br/>
-      <br/>
-      <br/>
-      <br/>
+     
+
 
     </div>
   );

@@ -20,7 +20,8 @@ import {
   URL_BASE_DRINK,
   URL_METHOD_DRINK_CAT,
   buildCategoryMealList,
-  buildCategoryDrinkList
+  buildCategoryDrinkList,
+  PHOTO
 
 } from "../helper.js";
 
@@ -37,6 +38,7 @@ function App() {
   const [categoryDrinkList, setCategoryDrinkList] = useState({});
   const [loading, setLoading] = useState(true);
   const [errorMessage,setErrorMessage]= useState("");
+  const [statusSearch,setStatusSearch]=useState("")
   
   const [favorites, setFavorites] = useState([
     {
@@ -68,7 +70,7 @@ function App() {
 
 
   const handleFavoritesMealToggle = (meal, faveList) => {
-    //console.log('favorite')
+  
     let faves = faveList.slice();
     const mealIndex = faves.filter((item) => item.idMeal === meal.idMeal);
     if (faves.length === 0 || mealIndex.length === 0) {
@@ -86,9 +88,10 @@ function App() {
 
     return mealIndex.length === 0 ? false : true;
   };
-// favorite drinks
+
+  // favorite drinks
   const handleFavoritesDrinkToggle = (drink, faveList) => {
-    console.log('favorite drink',faveList)
+   
     let faves = faveList.slice();
     const drinkIndex = faves.filter((item) => item.idDrink === drink.idDrink);
     if (faves.length === 0 || drinkIndex.length === 0) {
@@ -102,73 +105,38 @@ function App() {
   const isFavoriteDrink = (idDrink, faveList) => {
     const faves = faveList.slice();
     //validate if exist the fave in the array on state
-    console.log('Is fave Drinks', idDrink);
-    console.log('Is fave Drinks list', faveList);
+
     const drinkIndex = faves.filter((item) => item.idDrink === idDrink);
-console.log('Existe fave',drinkIndex)
+
     return drinkIndex.length === 0 ? false : true;
   };
 
 
   useEffect(() => {
     // Meal API
-    // const URL_BASE_MEAL = "https://www.themealdb.com/api/json/v1/1/";
-    // const URL_METHOD_MEAL_CAT= "list.php?c=list"
-
-    //console.log("fetch======================================");
     if (Object.keys(categoryMealList).length === 0) {
       fetch(URL_BASE_MEAL + URL_METHOD_MEAL_CAT)
         .then((res) => res.json())
         .then((data) => {
           setCategoryMealList(buildCategoryMealList(data, IMGDB));
-          console.log("fetch Meal", data);
+        
         })
         .catch((err) => console.log("Error loading results", err));
     }
 
     // Drink  API
-    // const URL_BASE_DRINK = "https://www.thecocktaildb.com/api/json/v1/1/";
-    // const URL_METHOD_DRINK_CAT= "/list.php?c=list"
-    //console.log("fetch======================================");
     if (Object.keys(categoryDrinkList).length === 0) {
       fetch(URL_BASE_DRINK + URL_METHOD_DRINK_CAT)
         .then((res) => res.json())
         .then((data) => {
           
           setCategoryDrinkList(buildCategoryDrinkList(data, IMGDB));
-          console.log("fetch Driks", data);
+       
         })
         .catch((err) => console.log("Error loading results", err));
     }
   });
-
-  // const buildCategoryMealList = (data, imagenList) => {
-  //   const filterMeals = data.meals.filter(
-  //     (meal) => meal.strCategory !== "Miscellaneous"
-  //   );
-  //   //const categoryList = [];
-  //   const imagenCategoryList = filterMeals.map((meal, index) => {
-  //     const path = imagenList.categoryMeals.filter(
-  //       (category) => category.name === meal.strCategory
-  //     );
-  //     return { id: index, name: meal.strCategory, path: path[0].path };
-  //   });
-  //   return imagenCategoryList;
-  // };
-
-  // const buildCategoryDrinkList = (data, imagenList) => {
-  //   const filteDrinks = data.drinks.filter(
-  //     (meal) => meal.strCategory !== "Other/Unknown"
-  //   );
-  //   //const categoryList = [];
-  //   const imagenCategoryList = filteDrinks.map((drink, index) => {
-  //     const path = imagenList.categoryDrinks.filter(
-  //       (category) => category.name === drink.strCategory
-  //     );
-  //     return { id: index, name: drink.strCategory, path: path[0].path };
-  //   });
-  //   return imagenCategoryList;
-  // };
+  
 
   return (
     <div className="App">
@@ -176,7 +144,13 @@ console.log('Existe fave',drinkIndex)
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="container-fluid">
             <a className="navbar-brand" href="#">
-              Navard
+            <img width="80px"
+            src={PHOTO}
+            className="img-fluid"
+            alt=""
+            
+          />
+              
             </a>
 
             <div className="collapse navbar-collapse" id="navbarColor03">
@@ -187,18 +161,7 @@ console.log('Existe fave',drinkIndex)
                     Home{" "}
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/meals">
-                    {" "}
-                    Meals{" "}
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/drinks">
-                    {" "}
-                    Drinks{" "}
-                  </Link>
-                </li>
+             
                 <li className="nav-item">
                   <Link className="nav-link" to="/faves">
                     {" "}
@@ -206,11 +169,13 @@ console.log('Existe fave',drinkIndex)
                   </Link>
                 </li>
               </ul>
-              <SearchForm setLoading={setLoading} errorMessage={errorMessage} setErrorMessage={setErrorMessage}  />
+              <SearchForm setLoading={setLoading} errorMessage={errorMessage} setErrorMessage={setErrorMessage} 
+             
+              statusSearch={statusSearch} setStatusSearch={setStatusSearch} />
             </div>
           </div>
         </nav>
-        {console.log("pasa", Object.keys(categoryMealList).length)}
+      
 
         <Switch>
           <Route exact path="/">

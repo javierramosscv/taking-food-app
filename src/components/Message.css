@@ -1,0 +1,10 @@
+.Message {
+  height: 50px;
+  text-align: center;
+}
+
+.NOData {
+  font-size: 20px;
+
+  color: #242222;
+}

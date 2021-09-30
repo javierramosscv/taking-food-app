@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
+import Message from "./Message";
 import "./SearchMealResult.css";
-//import Takeing from "../image/takeing.png";
 import Spinner from "./Spinner";
 import {
   URL_BASE_MEAL,
@@ -9,10 +9,6 @@ import {
   URL_METHODBYTEXT_MEAL,
   PHOTO,
 } from "../helper.js";
-
-//const URL_BASE = "https://www.themealdb.com/api/json/v1/1/";
-//const URL_METHODBYCATEGORY_MEAL = "filter.php?c=";
-//const URL_METHODBYTEXT_MEAL = "search.php?s=";
 
 function SearchMealResult(props) {
   const history = useHistory();
@@ -22,6 +18,7 @@ function SearchMealResult(props) {
   const style = { maxWidth: "20rem", minWidth: "25rem" };
 
   useEffect(() => {
+   
     const URL_METHOD =
       params.kq === "c" ? URL_METHODBYCATEGORY_MEAL : URL_METHODBYTEXT_MEAL;
 
@@ -29,20 +26,16 @@ function SearchMealResult(props) {
     fetch(URL_BASE_MEAL + URL_METHOD + params.query)
       .then((res) => res.json())
       .then((data) => {
-        setResults(data);
-
         props.setLoading(false);
-
-        console.log("fetch", data);
+        setResults(data);
+        
       })
       .catch((err) => console.log("Error loading results", err));
   }, [params.query]);
 
   return (
     <div className="resultMain">
-      <h3>
-        Search Results for:'{params.query} {params.kq}'
-      </h3>
+      <h3>Search Results for:'{params.query}'</h3>
       {props.loading ? (
         <div>
           <Spinner />
@@ -77,20 +70,24 @@ function SearchMealResult(props) {
                         {params.kq === "c" ? "" : `Area: ${meal.strArea}`}
                       </small>
                     </span>
-                    <div className="form-check form-switch position-absolute top-0 end-0 mt-2">
-                      <input
-                        className="form-check-input "
-                        type="checkbox"
-                        id="flexSwitchCheckDefault"
-                        onChange={() =>
-                          props.handleToggleFave(meal, props.favorites)
-                        }
-                        checked={
-                          props.isFavorite(meal.idMeal, props.favorites)
-                            ? "checked"
-                            : ""
-                        }
-                      />
+                    <div className="position-absolute top-0 end-0 mt-2 me-2">
+                      {props.isFavorite(meal.idMeal, props.favorites) ? (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          fill="currentColor"
+                          class="bi bi-bookmark-plus-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"
+                          />
+                        </svg>
+                      ) : (
+                        ""
+                      )}
                     </div>
                   </div>
                 </div>
@@ -99,7 +96,16 @@ function SearchMealResult(props) {
           ))}
         </div>
       ) : (
-        <p>no data</p>
+        <div>
+          <br />
+          <br />
+          <br />
+          <Message message={"No Results"} />
+          <br />
+          <br />
+          <br />
+          <br />
+        </div>
       )}
     </div>
   );
