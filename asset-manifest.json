@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/taking-food-app/static/css/main.f2cc11ad.chunk.css",
-    "main.js": "/taking-food-app/static/js/main.045f3ff1.chunk.js",
-    "main.js.map": "/taking-food-app/static/js/main.045f3ff1.chunk.js.map",
-    "runtime-main.js": "/taking-food-app/static/js/runtime-main.7421400a.js",
-    "runtime-main.js.map": "/taking-food-app/static/js/runtime-main.7421400a.js.map",
+    "main.css": "/taking-food-app/static/css/main.e6e5aeef.chunk.css",
+    "main.js": "/taking-food-app/static/js/main.62662911.chunk.js",
+    "main.js.map": "/taking-food-app/static/js/main.62662911.chunk.js.map",
+    "runtime-main.js": "/taking-food-app/static/js/runtime-main.e1c9c9c7.js",
+    "runtime-main.js.map": "/taking-food-app/static/js/runtime-main.e1c9c9c7.js.map",
     "static/css/2.0f8aad42.chunk.css": "/taking-food-app/static/css/2.0f8aad42.chunk.css",
-    "static/js/2.967a5710.chunk.js": "/taking-food-app/static/js/2.967a5710.chunk.js",
-    "static/js/2.967a5710.chunk.js.map": "/taking-food-app/static/js/2.967a5710.chunk.js.map",
-    "static/js/3.ff6d627c.chunk.js": "/taking-food-app/static/js/3.ff6d627c.chunk.js",
-    "static/js/3.ff6d627c.chunk.js.map": "/taking-food-app/static/js/3.ff6d627c.chunk.js.map",
+    "static/js/2.229bfd99.chunk.js": "/taking-food-app/static/js/2.229bfd99.chunk.js",
+    "static/js/2.229bfd99.chunk.js.map": "/taking-food-app/static/js/2.229bfd99.chunk.js.map",
+    "static/js/3.cf3ba738.chunk.js": "/taking-food-app/static/js/3.cf3ba738.chunk.js",
+    "static/js/3.cf3ba738.chunk.js.map": "/taking-food-app/static/js/3.cf3ba738.chunk.js.map",
     "index.html": "/taking-food-app/index.html",
     "static/css/2.0f8aad42.chunk.css.map": "/taking-food-app/static/css/2.0f8aad42.chunk.css.map",
-    "static/css/main.f2cc11ad.chunk.css.map": "/taking-food-app/static/css/main.f2cc11ad.chunk.css.map",
-    "static/js/2.967a5710.chunk.js.LICENSE.txt": "/taking-food-app/static/js/2.967a5710.chunk.js.LICENSE.txt",
+    "static/css/main.e6e5aeef.chunk.css.map": "/taking-food-app/static/css/main.e6e5aeef.chunk.css.map",
+    "static/js/2.229bfd99.chunk.js.LICENSE.txt": "/taking-food-app/static/js/2.229bfd99.chunk.js.LICENSE.txt",
     "static/media/takeing.deb06100.png": "/taking-food-app/static/media/takeing.deb06100.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.7421400a.js",
+    "static/js/runtime-main.e1c9c9c7.js",
     "static/css/2.0f8aad42.chunk.css",
-    "static/js/2.967a5710.chunk.js",
-    "static/css/main.f2cc11ad.chunk.css",
-    "static/js/main.045f3ff1.chunk.js"
+    "static/js/2.229bfd99.chunk.js",
+    "static/css/main.e6e5aeef.chunk.css",
+    "static/js/main.62662911.chunk.js"
   ]
 }
