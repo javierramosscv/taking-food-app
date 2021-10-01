@@ -13,7 +13,11 @@ const Home = (props) => {
     "maxWidth": "20rem",
   };
 
- 
+ useEffect(()=>{
+    props.setStatusSearch("");
+    props.setErrorMessage("");
+ })
+
   const buildCard = (categoryList, init, end,path) => {
 
      return categoryList.map((item,index) => {

@@ -183,6 +183,8 @@ function App() {
               categoryDrinkList={categoryDrinkList}
               categoryMealList={categoryMealList}
               setLoading={setLoading}
+              setStatusSearch={setStatusSearch}
+              setErrorMessage={setErrorMessage}
             />
           </Route>
           <Route exact path="/meals" component={Meals} />
